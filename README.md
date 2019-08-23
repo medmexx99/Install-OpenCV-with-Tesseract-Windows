@@ -21,7 +21,7 @@ Open GitBash and Clone this repo. Lets clone in `C` drive.
 
 ```ruby
 cd /C/
-git clone https://github.com/ghimiredhikura/Install-OpenCV-with-Tesseract-Windows.git 
+git clone https://github.com/medmexx99/Install-OpenCV-with-Tesseract-Windows.git 
 cd Install-OpenCV-with-Tesseract-Windows
 ```
 ## Step 2: Install OpenCV
