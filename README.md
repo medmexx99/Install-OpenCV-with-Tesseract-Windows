@@ -8,11 +8,11 @@
 | Installation Tool    | [GitBash](https://git-scm.com/download/win)  |
 |                      |                                                | 
 | Visual Studio        | [Visual Studio 15 2017 Win64](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15)  | 
-| OpenCV               | [OpenCV 4.0.1](https://github.com/opencv/opencv/releases/tag/4.0.1)  | 
+| OpenCV               | [OpenCV 4.1.1](https://github.com/opencv/opencv/releases/tag/4.1.1)  | 
 | Libpng               | [libpng1636](https://sourceforge.net/projects/libpng/files/) | 
 | Zlib                 | [zlib1211](https://sourceforge.net/projects/libpng/files/zlib/1.2.11/) | 
-| Leptonica            | [Leptonica version 1.74.4](https://github.com/DanBloomberg/leptonica/releases/tag/1.74.4) | 
-| Tesseract            | [Tesseract 4.0.0 Release](https://github.com/tesseract-ocr/tesseract/releases/tag/4.0.0) | 
+| Leptonica            | [Leptonica version 1.78.0](https://github.com/DanBloomberg/leptonica/releases/tag/1.78.0) | 
+| Tesseract            | [Tesseract 5.0.0-alpha](https://github.com/tesseract-ocr/tesseract/releases/tag/5.0.0-alpha) | 
 
 ## Step 1: Clone this Repo
 Install [Git Bash for windows](https://git-scm.com/download/win) if you haven't yet.  
@@ -25,6 +25,9 @@ git clone https://github.com/medmexx99/Install-OpenCV-with-Tesseract-Windows.git
 cd Install-OpenCV-with-Tesseract-Windows
 ```
 ## Step 2: Install OpenCV
+
+Ensure that CMake is installed. If GitBash cannot find cmake.exe altough it is installed, maybe you must run GitBash as administrator.
+
 ```ruby
 ./installOCV.sh
 ```
