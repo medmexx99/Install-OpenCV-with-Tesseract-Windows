@@ -19,11 +19,15 @@ CMAKE_CONFIG_GENERATOR="Visual Studio 15 2017 Win64"
 RepoSource=leptonica
 MAJGitRepo $RepoSource https://github.com/DanBloomberg/leptonica.git
 cd $RepoSource
-git reset --hard f3d7ee868b4864cdca7ea57349d49f3d2b4a63ec
+git reset --hard 1.78.0
 cd ..
 
 pushd Build/$RepoSource
-cmake -G"$CMAKE_CONFIG_GENERATOR" -DCMAKE_INSTALL_PREFIX="$myRepo"/Install/leptonica "$myRepo/$RepoSource"
+cmake -G"$CMAKE_CONFIG_GENERATOR" -DCMAKE_INSTALL_PREFIX="$myRepo"/Install/leptonica "$myRepo/$RepoSource" \
+-DZLIB_INCLUDE_DIR:PATH="$myRepo"/Install/zlib/include -DZLIB_LIBRARY_DEBUG:FILE="$myRepo"/Install/zlib/lib/zlibstaticd.lib -DZLIB_LIBRARY_RELEASE:FILE="$myRepo"/Install/zlib/lib/zlibstatic.lib \
+-DPNG_INCLUDE_DIR:PATH="$myRepo"/Install/lpng/include -DPNG_LIBRARY_DEBUG:FILE="$myRepo"/Install/lpng/lib/libpng16_staticd.lib -DPNG_LIBRARY_RELEASE:FILE="$myRepo"/Install/lpng/lib/libpng16_static.lib \
+-DTIFF_INCLUDE_DIR:PATH="$myRepo"/opencv/3rdparty/libtiff -DTIFF_LIBRARY_DEBUG:FILE="$myRepo"/Build/opencv/3rdparty/lib/Debug/libtiffd.lib -DTIFF_LIBRARY_RELEASE:FILE="$myRepo"/Build/opencv/3rdparty/lib/Release/libtiff.lib \
+-DJPEG_INCLUDE_DIR:PATH="$myRepo"/opencv/3rdparty/libjpeg -DJPEG_LIBRARY_DEBUG:FILE="$myRepo"/Build/opencv/3rdparty/lib/Debug/libjpeg-turbod.lib -DJPEG_LIBRARY_RELEASE:FILE="$myRepo"/Build/opencv/3rdparty/lib/Release/libjpeg-turbo.lib
 echo "************************* $Source_DIR -->debug"
 cmake --build .  --config release
 cmake --build .  --target install --config release

@@ -22,7 +22,7 @@ if [  ! -d "$myRepo/opencv"  ]; then
     echo "cloning opencv"
     git clone https://github.com/opencv/opencv.git
 	cd opencv
-	git reset --hard c9ad5779f2803dcc91a9938142209128d30b22d1
+	git reset --hard 4.1.1
     cd ..
 fi
 
@@ -30,7 +30,7 @@ if [  ! -d "$myRepo/opencv_contrib"  ]; then
     echo "cloning opencv_contrib"
     git clone https://github.com/opencv/opencv_contrib.git
 	cd opencv_contrib
-	git reset --hard 25221244732dcf44c1450d0f93edc2529a61c0e1
+	git reset --hard 4.1.1
 	cd ..
 fi
 

@@ -19,7 +19,7 @@ CMAKE_CONFIG_GENERATOR="Visual Studio 15 2017 Win64"
 RepoSource=tesseract
 MAJGitRepo $RepoSource https://github.com/tesseract-ocr/tesseract.git
 cd $RepoSource
-git reset --hard 51316994ccae0b48692d547030f26c0969308214
+git reset --hard 5.0.0-alpha
 cd ..
 
 pushd Build/$RepoSource
@@ -33,7 +33,7 @@ RepoSource=opencv
 pushd Build/$RepoSource
 CMAKE_OPTIONS='-DBUILD_PERF_TESTS:BOOL=OFF -DBUILD_TESTS:BOOL=OFF -DBUILD_DOCS:BOOL=OFF -DWITH_CUDA:BOOL=OFF'
 cmake -G"$CMAKE_CONFIG_GENERATOR"  \
--DTesseract_INCLUDE_DIR:PATH="${myRepo}"/Install/tesseract/include -DTesseract_LIBRARY="${myRepo}"/Install/tesseract/lib/tesseract40.lib -DLept_LIBRARY="${myRepo}"/Install/leptonica/lib/leptonica-1.74.4.lib \
+-DTesseract_INCLUDE_DIR:PATH="${myRepo}"/Install/tesseract/include -DTesseract_LIBRARY="${myRepo}"/Install/tesseract/lib/tesseract50.lib -DLept_LIBRARY="${myRepo}"/Install/leptonica/lib/leptonica-1.78.0.lib \
 $CMAKE_OPTIONS -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
 -DINSTALL_CREATE_DISTRIB=ON -DCMAKE_INSTALL_PREFIX="$myRepo"/install/"$RepoSource"  "$myRepo/$RepoSource"
 echo "************************* $Source_DIR -->devenv debug"
