@@ -22,6 +22,8 @@ cd $RepoSource
 git reset --hard 1.78.0
 cd ..
 
+mkdir Build
+mkdir Build/$RepoSource
 pushd Build/$RepoSource
 cmake -G"$CMAKE_CONFIG_GENERATOR" -DCMAKE_INSTALL_PREFIX="$myRepo"/Install/leptonica "$myRepo/$RepoSource" \
 -DZLIB_INCLUDE_DIR:PATH="$myRepo"/Install/zlib/include -DZLIB_LIBRARY_DEBUG:FILE="$myRepo"/Install/zlib/lib/zlibstaticd.lib -DZLIB_LIBRARY_RELEASE:FILE="$myRepo"/Install/zlib/lib/zlibstatic.lib \
@@ -31,4 +33,6 @@ cmake -G"$CMAKE_CONFIG_GENERATOR" -DCMAKE_INSTALL_PREFIX="$myRepo"/Install/lepto
 echo "************************* $Source_DIR -->debug"
 cmake --build .  --config release
 cmake --build .  --target install --config release
+cmake --build .  --config debug
+cmake --build .  --target install --config debug
 popd

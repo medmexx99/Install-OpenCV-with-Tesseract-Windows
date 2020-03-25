@@ -2,6 +2,7 @@
 myRepo=$(pwd)
 CMAKE_CONFIG_GENERATOR="Visual Studio 15 2017 Win64"
 RepoSource=zlib
+mkdir Build
 mkdir Build/$RepoSource
 pushd Build/$RepoSource
 cmake . -G"Visual Studio 15 2017 Win64" \

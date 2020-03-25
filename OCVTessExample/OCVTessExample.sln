@@ -4,6 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OCVTessExample", "OCVTessExample\OCVTessExample.vcxproj", "{5D8D670C-EE02-4816-8ED8-28881D68876E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3AF6B86D-258D-406C-9BC3-0F243EE730F1} = {3AF6B86D-258D-406C-9BC3-0F243EE730F1}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenCVDeviceEnumerator", "OpenCVDeviceEnumerator\OpenCVDeviceEnumerator.vcxproj", "{3AF6B86D-258D-406C-9BC3-0F243EE730F1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NanaTest", "NanaTest\NanaTest.vcxproj", "{BF0A9FE1-908C-450A-887E-3CF454854609}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +28,22 @@ Global
 		{5D8D670C-EE02-4816-8ED8-28881D68876E}.Release|x64.Build.0 = Release|x64
 		{5D8D670C-EE02-4816-8ED8-28881D68876E}.Release|x86.ActiveCfg = Release|Win32
 		{5D8D670C-EE02-4816-8ED8-28881D68876E}.Release|x86.Build.0 = Release|Win32
+		{3AF6B86D-258D-406C-9BC3-0F243EE730F1}.Debug|x64.ActiveCfg = Debug|x64
+		{3AF6B86D-258D-406C-9BC3-0F243EE730F1}.Debug|x64.Build.0 = Debug|x64
+		{3AF6B86D-258D-406C-9BC3-0F243EE730F1}.Debug|x86.ActiveCfg = Debug|Win32
+		{3AF6B86D-258D-406C-9BC3-0F243EE730F1}.Debug|x86.Build.0 = Debug|Win32
+		{3AF6B86D-258D-406C-9BC3-0F243EE730F1}.Release|x64.ActiveCfg = Release|x64
+		{3AF6B86D-258D-406C-9BC3-0F243EE730F1}.Release|x64.Build.0 = Release|x64
+		{3AF6B86D-258D-406C-9BC3-0F243EE730F1}.Release|x86.ActiveCfg = Release|Win32
+		{3AF6B86D-258D-406C-9BC3-0F243EE730F1}.Release|x86.Build.0 = Release|Win32
+		{BF0A9FE1-908C-450A-887E-3CF454854609}.Debug|x64.ActiveCfg = Debug|x64
+		{BF0A9FE1-908C-450A-887E-3CF454854609}.Debug|x64.Build.0 = Debug|x64
+		{BF0A9FE1-908C-450A-887E-3CF454854609}.Debug|x86.ActiveCfg = Debug|Win32
+		{BF0A9FE1-908C-450A-887E-3CF454854609}.Debug|x86.Build.0 = Debug|Win32
+		{BF0A9FE1-908C-450A-887E-3CF454854609}.Release|x64.ActiveCfg = Release|x64
+		{BF0A9FE1-908C-450A-887E-3CF454854609}.Release|x64.Build.0 = Release|x64
+		{BF0A9FE1-908C-450A-887E-3CF454854609}.Release|x86.ActiveCfg = Release|Win32
+		{BF0A9FE1-908C-450A-887E-3CF454854609}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

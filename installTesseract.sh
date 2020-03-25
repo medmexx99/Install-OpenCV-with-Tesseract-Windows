@@ -22,6 +22,8 @@ cd $RepoSource
 git reset --hard 5.0.0-alpha
 cd ..
 
+mkdir Build
+mkdir Build/$RepoSource
 pushd Build/$RepoSource
 cmake -G"$CMAKE_CONFIG_GENERATOR"  -DBUILD_TRAINING_TOOLS:BOOL=OFF -DCMAKE_INSTALL_PREFIX="$myRepo"/Install/tesseract -DLeptonica_DIR:PATH="$myRepo"/Install/leptonica/cmake -DPKG_CONFIG_EXECUTABLE:BOOL=OFF "$myRepo"/"$RepoSource"
 echo "************************* $Source_DIR -->release"
@@ -32,14 +34,15 @@ popd
 RepoSource=opencv
 pushd Build/$RepoSource
 CMAKE_OPTIONS='-DBUILD_PERF_TESTS:BOOL=OFF -DBUILD_TESTS:BOOL=OFF -DBUILD_DOCS:BOOL=OFF -DWITH_CUDA:BOOL=OFF'
-cmake -G"$CMAKE_CONFIG_GENERATOR"  \
--DTesseract_INCLUDE_DIR:PATH="${myRepo}"/Install/tesseract/include -DTesseract_LIBRARY="${myRepo}"/Install/tesseract/lib/tesseract50.lib -DLept_LIBRARY="${myRepo}"/Install/leptonica/lib/leptonica-1.78.0.lib \
-$CMAKE_OPTIONS -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
+cmake -G"$CMAKE_CONFIG_GENERATOR"  -DCMAKE_DEBUG_POSTFIX:STRING="d" \
+-DTesseract_INCLUDE_DIR:PATH="${myRepo}"/Install/tesseract/include -DTesseract_LIBRARY_RELEASE="${myRepo}"/Install/tesseract/lib/tesseract50.lib \
+-DTesseract_LIBRARY_DEBUG="${myRepo}"/Install/tesseract/lib/tesseract50d.lib -DLept_LIBRARY_DEBUG="${myRepo}"/Install/leptonica/lib/leptonica-1.78.0dd.lib \
+-DLept_LIBRARY_RELEASE="${myRepo}"/Install/leptonica/lib/leptonica-1.78.0.lib $CMAKE_OPTIONS -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
 -DINSTALL_CREATE_DISTRIB=ON -DCMAKE_INSTALL_PREFIX="$myRepo"/install/"$RepoSource"  "$myRepo/$RepoSource"
 echo "************************* $Source_DIR -->devenv debug"
 cmake --build .  --config debug
+cmake --build .  --target install --config debug
 echo "************************* $Source_DIR -->devenv release"
 cmake --build .  --config release
 cmake --build .  --target install --config release
-cmake --build .  --target install --config debug
 popd
